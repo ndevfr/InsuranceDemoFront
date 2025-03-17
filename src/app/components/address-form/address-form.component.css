@@ -1,0 +1,16 @@
+.address-form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.address-form input {
+  width: 100%;
+}
+
+.address-form:last-child {
+  margin-top: 20px;
+}
+
+.address-form p {
+  font-size: var(--font-size-large);
+}

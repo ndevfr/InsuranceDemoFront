@@ -1,1 +1,402 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --font-family: 'Roboto', sans-serif;
+  --font-size-small: 14px;
+  --font-size-normal: 16px;
+  --font-size-large: 18px;
+  --primary-1: #006DF7;
+  --primary-2: #0043bc;
+  --primary-3: #19AAFD;
+  --secondary-1: #ff65ad;
+  --secondary-2: #d83e8b;
+  --danger-1: #e92054;
+  --danger-2: #c9003d;
+  --success-1: #52c097;
+  --success-2: #239973;
+  --warning-1: #ff8e7a;
+  --warning-2: #d46857;
+  --white: #fdfdfd;
+  --gray-1: #f6f6f6;
+  --gray-2: #CCCCCC;
+  --gray-3: #999999;
+  --text-color: #444;
+  --text-primary-color: #fdfdfd;
+  --background: #f7f9ff;
+  --border: 1px solid var(--gray-2);
+  --border-radius: 6px;
+}
+
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h1 {
+  color: var(--primary-1);
+  text-align: center;
+  font-family: Pacifico;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--gray-2);
+  margin: 20px 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--background);
+  font-size: var(--font-size-normal);
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
+textarea {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 6px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-normal);
+}
+
+select {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 6px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-normal);
+}
+
+.form-error {
+  color: var(--danger-1);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Container */
+
+.app-container {
+
+}
+
+.app-content {
+  padding: 50px 20px;
+  grid-area: content;
+  min-height: calc(100vh - 172px);
+}
+
+.max-content {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Flex layout */
+
+.d-flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+.full {
+  width: 100%;
+}
+
+/* Padding and margin */
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-30 {
+  padding: 30px;
+}
+
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-30 {
+  margin: 30px;
+}
+
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.my-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+/* Buttons */
+
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  font-size: var(--font-size-normal);
+}
+
+.btn-primary {
+  background-color: var(--primary-1);
+  color: var(--text-primary-color);
+  &:hover {
+    background-color: var(--primary-2);
+  }
+}
+
+.btn-danger {
+  background-color: var(--danger-1);
+  color: var(--text-primary-color);
+  &:hover {
+    background-color: var(--danger-2);
+  }
+}
+
+.btn-success {
+  background-color: var(--success-1);
+  color: var(--text-primary-color);
+  &:hover {
+    background-color: var(--success-2);
+  }
+}
+
+.alert {
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+}
+
+.alert-success {
+  background-color: var(--success-1);
+  color: var(--text-primary-color);
+}
+
+/* Badges */
+
+.badge {
+  padding: 7px 10px 5px 10px;
+  border-radius: 20px;
+  font-size: var(--font-size-small);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-primary {
+  background-color: var(--primary-1);
+  color: var(--text-primary-color);
+}
+
+.badge-secondary {
+  background-color: var(--secondary-1);
+  color: var(--text-primary-color);
+}
+
+.badge-gray {
+  background-color: var(--gray-3);
+  color: var(--text-primary-color);
+}
+
+.badge-danger {
+  background-color: var(--danger-1);
+  color: var(--text-primary-color);
+}
+
+.badge-success {
+  background-color: var(--success-1);
+  color: var(--text-primary-color);
+}
+
+/* Forms */
+
+.form-group {
+  margin-top:20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type='text'],
+.form-group input[type='email'],
+.form-group input[type='password'],
+.form-group input[type='number'],
+.form-group textarea {
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 6px;
+  font-family: var(--font-family);
+}
+
+.form-group select {
+  width: 100%;
+}
+
+.form-error {
+  color: var(--danger-1);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.profile-img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-profile-img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Cards */
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 212px);
+}
+
+.card {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.card-header {
+  font-size: var(--font-size-large);
+  color: var(--primary-1);
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-container-ex {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Responsive */

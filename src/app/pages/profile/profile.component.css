@@ -1,0 +1,23 @@
+.profile {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile h2, .profile h3 {
+  text-align: center;
+}
+
+.profile label {
+  display: block;
+  margin: 10px 0;
+}
+
+.profile input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+.profile .card p {
+  font-size: var(--font-size-large);
+}

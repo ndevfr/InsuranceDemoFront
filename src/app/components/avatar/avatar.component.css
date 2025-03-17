@@ -1,0 +1,25 @@
+.circle {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle img{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.circle .initials {
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.2625px;
+  -webkit-user-select: none;
+  user-select: none;
+  text-align: center;
+  height: 20px;
+}

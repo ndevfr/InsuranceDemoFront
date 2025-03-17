@@ -1,0 +1,72 @@
+<div class="profile-form">
+  @if(editModeProfile) {
+    <form [formGroup]="profileForm" (ngSubmit)="profileForm.valid && onSubmitProfile()" #f="ngForm">
+      <div class="form-group">
+        <label>
+          Firstname:
+          <input type="text" formControlName="firstname"  />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          Lastname:
+          <input type="text" formControlName="lastname"  />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          Email:
+          <input type="text" formControlName="email" />
+        </label>
+      </div>
+      <div class="d-flex flex-row align-items-center mt-20">
+        <button type="submit" class="btn btn-primary mr-10">Update</button> <button type="button" class="btn btn-secondary" (click)="toggleEditModeProfile()">Cancel</button>
+      </div>
+    </form>
+  } @else {
+    <div class="my-20">
+      <p>Firstname: {{ profile.firstname }}</p>
+      <p>Lastname: {{ profile.lastname }}</p>
+      <p>Email: {{ profile.email }}</p>
+      <div class="d-flex flex-row align-items-center my-10">
+        <button class="btn btn-success mr-10" (click)="toggleEditModeProfile()">Update</button>
+      </div>
+    </div>
+  }
+  @if(editModePassword) {
+    <form [formGroup]="passwordForm" (ngSubmit)="passwordForm.valid && onSubmitPassword()">
+      <div class="form-group">
+        <label for="currentPassword">Current Password</label>
+        <input id="currentPassword" formControlName="currentPassword" type="password" />
+        <div *ngIf="passwordForm.get('currentPassword')?.invalid && passwordForm.get('currentPassword')?.touched" class="form-error">
+          Current password is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="newPassword">New Password</label>
+        <input id="newPassword" formControlName="newPassword" type="password" />
+        <div *ngIf="passwordForm.get('newPassword')?.invalid && passwordForm.get('newPassword')?.touched" class="form-error">
+          New password is required and must be at least 6 characters.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+        <div *ngIf="passwordForm.errors?.['mismatch'] && passwordForm.get('confirmPassword')?.touched" class="form-error">
+          Passwords do not match.
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-center mt-20">
+        <button type="submit" class="btn btn-primary mr-10">Update</button> <button type="button" class="btn btn-secondary" (click)="toggleEditModePassword()">Cancel</button>
+      </div>
+    </form>
+  } @else {
+    <div class="my-20">
+      <div class="d-flex flex-row align-items-center mt-10">
+        <button class="btn btn-success mr-10" (click)="toggleEditModePassword()">Change password</button>
+      </div>
+    </div>
+  }
+</div>

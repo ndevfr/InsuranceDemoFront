@@ -1,0 +1,30 @@
+<div class="profile">
+  <h1>My profile</h1>
+
+
+
+  <div class="card mt-30">
+    <h2>My profile</h2>
+    <app-user-form [profile]="user" (changePassword)="changePassword($event)" (changeProfile)="changeProfile($event)"></app-user-form>
+  </div>
+
+  <div class="card mt-30">
+    <h2>My addresses</h2>
+    @if(addresses.length > 0) {
+      @for(address of addresses; track address.id){
+        <app-address-form mode="update" [address]="address" (setAsMain)="setAddressAsMain($event)" (save)="updateAddress($event)" (remove)="deleteAddress($event)"></app-address-form>
+      }
+    }
+    <app-address-form mode="create" (save)="addAddress($event)"></app-address-form>
+  </div>
+
+  <div class="card mt-30">
+    <h2>My phone numbers</h2>
+    @if(addresses.length > 0) {
+      @for(phone of phones; track phone.id){
+        <app-phone-form mode="update" [phone]="phone" (setAsMain)="setPhoneAsMain($event)" (save)="updatePhone($event)" (remove)="deletePhone($event)"></app-phone-form>
+      }
+    }
+    <app-phone-form mode="create" (save)="addPhone($event)"></app-phone-form>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+header {
+  background: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 4px 10px 4px 0px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  width: auto;
+}
+
+a {
+  padding: 8px 12px;
+  font-size: var(--font-size-large);
+  line-height: var(--font-size-large);
+  color: var(--primary-1);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: none;
+  transition: background 0.3s;
+}
+
+a:hover {
+  color: var(--primary-2);
+}
+
+a.active {
+  padding: 8px 12px;
+  font-weight: bold;
+  background: linear-gradient(to top, var(--primary-1), var(--primary-3));
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.menuBtn {
+  fill: var(--primary-1);
+  width: 24px;
+  margin-left: 20px;
+  display: none;
+}

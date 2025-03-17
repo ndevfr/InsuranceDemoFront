@@ -1,0 +1,16 @@
+.phone-form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.phone-form input {
+  width: 100%;
+}
+
+.phone-form:last-child {
+  margin-top: 20px;
+}
+
+.phone-form p {
+  font-size: var(--font-size-large);
+}

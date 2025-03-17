@@ -1,0 +1,35 @@
+<header class="px-20 d-flex flew-row align-items-center">
+  <div class="max-content d-flex flew-row align-items-center">
+    <a routerLink="/" class="d-flex flex-row align-items-center mr-20">
+      <img src="logo.png" class="logo" alt="Ycar Insurance" />
+    </a>
+    <div class="d-flex flex-arrow justify-content-center align-items-center flex-fill">
+      <ul class="d-flex hide-xs flex-row flex-fill">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Home</a></li>
+        @if(isAdmin) {
+          <li><a routerLink="/admin" routerLinkActive="active" ariaCurrentWhenActive="page">Admin</a></li>
+        }
+      </ul>
+      <ul class="d-flex flex-row">
+        @if(isLoggedIn) {
+          <li><a routerLink="/profile" routerLinkActive="active" ariaCurrentWhenActive="page">Profile</a></li>
+          <li><a href="javascript:;" (click)="handleLogout()">Logout</a></li>
+        } @else {
+          <li class="mr-10"><a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a></li>
+          <li><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></li>
+        }
+      </ul>
+    </div>
+    <div class="d-flex flex-row">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        class="menuBtn"
+      >
+        <path
+          d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+        />
+      </svg>
+    </div>
+  </div>
+</header>

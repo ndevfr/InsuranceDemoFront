@@ -1,0 +1,73 @@
+<div class="address-form">
+  @if(editMode) {
+    <form [formGroup]="addressForm" (ngSubmit)="addressForm.valid && onSubmit()" #f="ngForm">
+      <div class="form-group">
+        <label>
+          Street:
+          <input type="text" formControlName="street"  />
+        </label>
+        <div *ngIf="addressForm.get('street')?.invalid && addressForm.get('street')?.touched" class="form-error">
+          Street is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+          Complement:
+          <input type="text" formControlName="complement" />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          Zipcode:
+          <input type="text" formControlName="zipCode" />
+        </label>
+        <div *ngIf="addressForm.get('zipCode')?.invalid  && addressForm.get('zipCode')?.touched" class="form-error">
+          Zipcode is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+          City:
+          <input type="text" formControlName="city" />
+        </label>
+        <div *ngIf="addressForm.get('city')?.invalid && addressForm.get('city')?.touched" class="form-error">
+          City is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+          Country:
+          <input type="text" formControlName="country" />
+        </label>
+        <div *ngIf="addressForm.get('country')?.invalid && addressForm.get('country')?.touched" class="form-error">
+          Country is required.
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-center mt-20">
+        <button type="submit" class="btn btn-primary mr-10">{{ mode === 'create' ? "Save" : "Update" }}</button> <button type="button" class="btn btn-secondary" (click)="toggleEdit()">Cancel</button>
+      </div>
+    </form>
+  } @else {
+    @if(mode === 'create') {
+      <button class="btn btn-primary" (click)="toggleEdit()">Add a new address</button>
+    } @else {
+      <div class="my-20">
+        <p>{{ address.street }}</p>
+        @if(address.complement) {
+          <p>{{ address.complement }}</p>
+        }
+        <p>{{ address.zipCode }}  {{ address.city }} {{ address.country }}</p>
+        <div class="d-flex flex-row align-items-center my-10">
+          <button class="btn btn-success mr-10" (click)="toggleEdit()">Update</button>
+          @if(!address.isMain) {
+            <button class="btn btn-secondary mr-10" (click)="setAddressAsMain()">Set as main</button>
+            <button class="btn btn-danger" (click)="removeAddress()">Remove</button>
+          } @else {
+            <span class="badge badge-gray">Main address</span>
+          }
+        </div>
+      </div>
+    }
+
+  }
+</div>
