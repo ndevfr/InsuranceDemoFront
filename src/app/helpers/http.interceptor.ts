@@ -21,7 +21,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     req = req.clone({
       withCredentials: true,
       setHeaders: {
-        Origin: ORIGIN
+        Authorization: ORIGIN
       }
     });
 
