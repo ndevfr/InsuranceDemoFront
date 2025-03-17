@@ -1,0 +1,93 @@
+.hero {
+  background: red;
+  background-image: url("https://www.ajg.com/uk/-/media/images/gallagher/uk/products/insurance/personal/motor/car-insurance-hero/1440x549.jpg");
+  background-size: cover;
+  background-position: bottom;
+  padding: 100px 20px;
+  text-align: center;
+  color: black;
+  border-radius: 40px;
+}
+
+.hero h2 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.hero button {
+  background-color: #0044cc;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.hero button:hover {
+  background-color: #003399;
+}
+
+.features {
+  padding: 50px 0;
+}
+
+.features .container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.features .feature {
+  width: 30%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.features .feature img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.features .feature h3 {
+  margin: 10px 0;
+}
+
+.testimonial {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.testimonial .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial h2 {
+  margin-bottom: 30px;
+}
+
+.testimonial-item {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+  font-style: italic;
+}
+
+.testimonial-item h4 {
+  margin-top: 10px;
+  font-weight: normal;
+}

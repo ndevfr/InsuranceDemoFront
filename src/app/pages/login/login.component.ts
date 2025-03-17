@@ -12,8 +12,8 @@ import { AvatarComponent } from '../../components/avatar/avatar.component';
 })
 export class LoginComponent implements OnInit {
   form: any = {
-    email: "mark.scout@lumen.com",
-    password: "Severance-08-927"
+    email: "",
+    password: ""
   };
   isLoginFailed = false;
   errorMessage = '';
