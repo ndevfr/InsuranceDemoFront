@@ -5,6 +5,9 @@ import { AuthService } from '../services/auth.service';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
+import {environment} from '@environments/environment';
+
+const ORIGIN = environment.origin;
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
@@ -17,6 +20,9 @@ export class HttpRequestInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     req = req.clone({
       withCredentials: true,
+      setHeaders: {
+        Origin: ORIGIN
+      }
     });
 
     return next.handle(req).pipe(
